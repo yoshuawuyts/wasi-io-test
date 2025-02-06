@@ -24,7 +24,7 @@ jobs:
         uses: cargo-bins/cargo-binstall@v1.10.15
       - name: Install wit-bindgen
         shell: bash
-        run: cargo binstall wit-bindgen
+        run: cargo binstall wit-bindgen-cli
       - name: Install wit-deps
         shell: bash
         run: cargo binstall wit-deps-cli
