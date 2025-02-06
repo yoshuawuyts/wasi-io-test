@@ -2,11 +2,11 @@ on:
   workflow_dispatch:
     inputs:
       prev_version:
-        description: 'Current semver tag'
+        description: 'Upgrading from version'
         required: true
         type: string
       next_version:
-        description: 'Current semver tag'
+        description: 'Upgrading to version'
         required: true
         type: string
 
