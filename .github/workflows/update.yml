@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      prev_version:
+        description: 'Current semver tag'
+        required: true
+        type: string
+      next_version:
+        description: 'Current semver tag'
+        required: true
+        type: string
+
+jobs:
+  print-versions:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.print_tags }} 
+    steps:
+      - name: Print the versions
+        run: echo Upgrading from ${{ inputs.prev_version }} to ${{ inputs.next_version }} 
