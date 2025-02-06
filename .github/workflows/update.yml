@@ -1,3 +1,6 @@
+name: Create a PR to upgrade the crate to a new version
+
+# Manually dispatch this action from the Actions page
 on:
   workflow_dispatch:
     inputs:
@@ -13,7 +16,6 @@ on:
 jobs:
   print-versions:
     runs-on: ubuntu-latest
-    if: ${{ inputs.print_tags }} 
     steps:
       - name: Print the versions
         run: echo Upgrading from ${{ inputs.prev_version }} to ${{ inputs.next_version }} 
