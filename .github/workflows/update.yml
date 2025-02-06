@@ -47,7 +47,14 @@ jobs:
         run:  wit-bindgen markdown wit --html-in-md --all-features
 
       # file PR
-      - name: create pull request
+      - name: Create feature branch
+        env:
+          FEATURE_BRANCH: v${{ inputs.next_version }}
+        run: |
+          git checkout -b $FEATURE_BRANCH
+          git push -u origin $FEATURE_BRANCH
+
+      - name: Create pull request
         run: gh pr create -B main -H v${{ inputs.next_version }} --title 'Upgrade to ${{ inputs.next_version }}' --body 'Created by Github action'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
