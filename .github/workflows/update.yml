@@ -35,7 +35,7 @@ jobs:
 
       # upgrade
       - name: Upgrade tag
-        run:  find . -type f -name "*.wit" -print0 | xargs -0 sed -i '' -e 's/@0\.2\.1/@0\.2\.2/g'
+        run:  find wit -type f -name "*.wit" -print0 | xargs -0 sed -i '' -e 's/@0\.2\.3/@0\.2\.4/g'
       - name: Upgrade wit deps
         run:  wit-deps update
       - name: Generate markdown
